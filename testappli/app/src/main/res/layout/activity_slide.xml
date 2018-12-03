@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/myText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="44dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/flchGaucheBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myText" />
+
+    <ImageView
+        android:id="@+id/flchGaucheHG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechegauche" />
+
+    <ImageView
+        android:id="@+id/flchGaucheHD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechegauche" />
+
+    <ImageView
+        android:id="@+id/flchGaucheBD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/flechegauche" />
+
+    <ImageView
+        android:id="@+id/flchGaucheBG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flechegauche" />
+
+    <ImageView
+        android:id="@+id/flchDroiteHG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechedroite" />
+
+    <ImageView
+        android:id="@+id/flchDroiteHD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechedroite" />
+
+    <ImageView
+        android:id="@+id/flchDroiteBD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/flechedroite" />
+
+    <ImageView
+        android:id="@+id/flchDroiteBG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flechedroite" />
+
+    <ImageView
+        android:id="@+id/flchBasHG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechebas" />
+
+    <ImageView
+        android:id="@+id/flchBasHD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechebas" />
+
+    <ImageView
+        android:id="@+id/flchBasBD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/flechebas" />
+
+    <ImageView
+        android:id="@+id/flchBasBG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flechebas" />
+
+    <ImageView
+        android:id="@+id/flchHautHG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechehaut" />
+
+    <ImageView
+        android:id="@+id/flchHautHD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flechehaut" />
+
+    <ImageView
+        android:id="@+id/flchHautBD"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/flechehaut" />
+
+    <ImageView
+        android:id="@+id/flchHautBG"
+        android:layout_width="82dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flechehaut" />
+
+</android.support.constraint.ConstraintLayout>
