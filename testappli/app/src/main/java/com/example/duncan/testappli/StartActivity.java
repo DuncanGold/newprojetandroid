@@ -35,15 +35,16 @@ public class StartActivity extends Activity {
                 break;
             case R.id.btnintermediate:
                 quizCategory = 2;
-                Intent appel0 = new Intent(getApplicationContext(), MainActivity.class);
-                appel0.putExtra("quizcategory",quizCategory);
-                startActivity(appel0);
+                Intent appel2 = new Intent(getApplicationContext(), MainActivity.class);
+                appel2.putExtra("quizcategory",quizCategory);
+                startActivity(appel2);
                 break;
             case R.id.btnhard:
                 quizCategory = 3;
-                Intent appel2 = new Intent(getApplicationContext(), FoodActivity.class);
-                appel2.putExtra("quizcategory",quizCategory);
-                startActivity(appel2);
+
+                Intent appel0 = new Intent(getApplicationContext(), FoodActivity.class);
+                appel0.putExtra("quizcategory",quizCategory);
+                startActivity(appel0);
                 break;
 
         }
