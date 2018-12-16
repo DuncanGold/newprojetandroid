@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.duncan.testappli">
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.INTERNET"/>
     <application
 
         android:allowBackup="true"
@@ -42,6 +54,11 @@
         <activity android:name=".FoodActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".WifiDirect"
+            android:label="Wifi" >
 
         </activity>
     </application>
