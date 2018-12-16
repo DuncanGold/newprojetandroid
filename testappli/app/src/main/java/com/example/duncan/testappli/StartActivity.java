@@ -27,19 +27,26 @@ public class StartActivity extends Activity {
         switch (view.getId()) {
             case R.id.btnsimple:
                 quizCategory = 1;
+                Intent appel = new Intent(getApplicationContext(), MainActivity.class);
+                appel.putExtra("quizcategory",quizCategory);
+                startActivity(appel);
                 break;
             case R.id.btnintermediate:
                 quizCategory = 2;
+                Intent appel0 = new Intent(getApplicationContext(), FoodActivity.class);
+                appel0.putExtra("quizcategory",quizCategory);
+                startActivity(appel0);
                 break;
             case R.id.btnhard:
                 quizCategory = 3;
+                Intent appel2 = new Intent(getApplicationContext(), MainActivity.class);
+                appel2.putExtra("quizcategory",quizCategory);
+                startActivity(appel2);
                 break;
 
         }
 
-        Intent appel = new Intent(getApplicationContext(), MainActivity.class);
-        appel.putExtra("quizcategory",quizCategory);
-        startActivity(appel);
+
     }
 
 }
