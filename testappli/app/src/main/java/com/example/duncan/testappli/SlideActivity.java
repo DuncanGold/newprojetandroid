@@ -1,6 +1,7 @@
 package com.example.duncan.testappli;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -309,9 +310,14 @@ public class SlideActivity extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            setContentView(R.layout.activity2_main);
-            myText=findViewById(R.id.score);
-            myText.setText(""+i);
+        //    setContentView(R.layout.activity2_main);
+          //  myText=findViewById(R.id.score);
+            //myText.setText(""+i);
+            int scorefinal = i;
+            Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+            appel.putExtra("scoreslide", scorefinal);
+            appel.putExtra("typescore", 3);
+            startActivity(appel);
         }
 
         @Override
