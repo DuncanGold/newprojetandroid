@@ -28,6 +28,7 @@ public class SlideActivity extends AppCompatActivity {
     private TextView textView;
     private TextView myText;
     private TextView tv; // textview to display the countdown
+    MyCount counter = new MyCount(10000, 1000);
 
 
     public void visibleImage(int posImage,int sensImage){
@@ -214,7 +215,12 @@ public class SlideActivity extends AppCompatActivity {
                 break;}
         return sens;
     }
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+        counter.cancel();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -231,7 +237,6 @@ public class SlideActivity extends AppCompatActivity {
         tv = findViewById(R.id.tv);
         // 5000 is the starting number (in milliseconds)
         // 1000 is the number to count down each time (in milliseconds)
-        MyCount counter = new MyCount(10000, 1000);
 
         counter.start();
     }

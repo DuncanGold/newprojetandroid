@@ -71,6 +71,12 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
 
     private Button btnplay;
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
@@ -98,7 +104,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         // High Score
         settings = getSharedPreferences("GAME_DATA", Context.MODE_PRIVATE);
         highScore = settings.getInt("HIGH_SCORE", 0);
-        highScoreLabel.setText("High Score : " + highScore);
+        highScoreLabel.setText("Meilleure score : " + highScore);
     }
 
     public void changePos() {
@@ -242,11 +248,11 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         black.setVisibility(View.INVISIBLE);
         orange.setVisibility(View.INVISIBLE);
         pink.setVisibility(View.INVISIBLE);
-        btnplay.setText("Play again !");
+        btnplay.setText("Rejouer !");
         // Update High Score
         if (score > highScore) {
             highScore = score;
-            highScoreLabel.setText("High Score : " + highScore);
+            highScoreLabel.setText("Meilleure score : " + highScore);
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt("HIGH_SCORE", highScore);

@@ -19,7 +19,9 @@ public class StartActivity extends Activity {
         editor.putInt("totalScore", 0);
         editor.commit();
     }
-
+    @Override
+    public void onBackPressed() {
+    }
     public void startQuiz(View view) {
 
         int quizCategory=1;
@@ -33,13 +35,13 @@ public class StartActivity extends Activity {
                 break;
             case R.id.btnintermediate:
                 quizCategory = 2;
-                Intent appel0 = new Intent(getApplicationContext(), FoodActivity.class);
+                Intent appel0 = new Intent(getApplicationContext(), MainActivity.class);
                 appel0.putExtra("quizcategory",quizCategory);
                 startActivity(appel0);
                 break;
             case R.id.btnhard:
                 quizCategory = 3;
-                Intent appel2 = new Intent(getApplicationContext(), MainActivity.class);
+                Intent appel2 = new Intent(getApplicationContext(), FoodActivity.class);
                 appel2.putExtra("quizcategory",quizCategory);
                 startActivity(appel2);
                 break;

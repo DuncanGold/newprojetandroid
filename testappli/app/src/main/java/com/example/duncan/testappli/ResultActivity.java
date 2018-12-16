@@ -12,7 +12,11 @@ package com.example.duncan.testappli;
         import android.widget.TextView;
 
 public class ResultActivity extends Activity {
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+        finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
