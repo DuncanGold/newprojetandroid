@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
 
 import java.util.Random;
 
@@ -31,13 +33,15 @@ public class ShakeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         tStart = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shake);
         img=(ImageView) findViewById(R.id.shakerimg);
         img.setX(20);
         img.setY(50);
-
+        final Toast toast = Toast.makeText(ShakeActivity.this, "Encore !", Toast.LENGTH_SHORT);
         tvShake = findViewById(R.id.tvShake);
 
 
@@ -56,10 +60,10 @@ public class ShakeActivity extends AppCompatActivity {
                  * device has been shook.
                  */
               //  mChronometer.start();
-                Toast.makeText(ShakeActivity.this, "Encore !", Toast.LENGTH_SHORT).show();
+                toast.show();
                 int haut = 0;
-                if (img.getY()>500) haut = -300;
-                else {haut=300;}
+                if (img.getY()>500) haut = -250;
+                else {haut=250;}
 
 
                 ObjectAnimator.ofFloat(img,"translationY",0,haut).setDuration(50).start();
@@ -74,6 +78,7 @@ public class ShakeActivity extends AppCompatActivity {
                     long tEnd = System.currentTimeMillis();
                     long tDelta = tEnd - tStart;
                     double elapsedMillis = tDelta / 1000.0;
+                    toast.cancel();
                     Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
                     appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
                     appel.putExtra("typescore", 2);

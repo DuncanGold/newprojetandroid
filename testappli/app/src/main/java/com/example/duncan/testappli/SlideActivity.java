@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v4.view.GestureDetectorCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ public class SlideActivity extends AppCompatActivity {
     private String userGest;
     private int nbrOcc = 5;
     private int i=0;
+    private TextView textView;
     private TextView myText;
     private TextView tv; // textview to display the countdown
 
@@ -216,11 +219,15 @@ public class SlideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_slide);
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+        i=0;
         myText = findViewById(R.id.myText);
-        myText.setText(""+i);
+        myText.setText("Score actuel  : "+i);
         visibleImageAlea();
+        textView = findViewById(R.id.textView);
         tv = findViewById(R.id.tv);
         // 5000 is the starting number (in milliseconds)
         // 1000 is the number to count down each time (in milliseconds)
@@ -253,7 +260,7 @@ public class SlideActivity extends AppCompatActivity {
                             if(userGest==getSens(sens)){
                                 i++;
                                 invisibleImage(pos,sens);
-                                myText.setText(""+i);
+                                myText.setText("Score actuel  : "+i);
                                 visibleImageAlea();
                             }
                             /////////////////////////////////////////////////////////////////////////////:
@@ -263,7 +270,7 @@ public class SlideActivity extends AppCompatActivity {
                             if(userGest==getSens(sens)){
                                 i++;
                                 invisibleImage(pos,sens);
-                                myText.setText(""+i);
+                                myText.setText("Score actuel  : "+i);
                                 visibleImageAlea();
                             }
                             ///////////////////////////////////////////////////////////////////////////////////////////
@@ -278,7 +285,7 @@ public class SlideActivity extends AppCompatActivity {
                         if(userGest==getSens(sens)){
                             i++;
                             invisibleImage(pos,sens);
-                            myText.setText(""+i);
+                            myText.setText("Score actuel  : "+i);
                             visibleImageAlea();
                         }
                         ////////////////////////////////////////////////////////////////////////////////////////////////////:
@@ -288,7 +295,7 @@ public class SlideActivity extends AppCompatActivity {
                         if(userGest==getSens(sens)){
                             i++;
                             invisibleImage(pos,sens);
-                            myText.setText(""+i);
+                            myText.setText("Score actuel  : "+i);
                             visibleImageAlea();
                         }
                         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////::::
@@ -322,7 +329,7 @@ public class SlideActivity extends AppCompatActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            tv.setText("Left: " + millisUntilFinished/1000);
+            tv.setText(""+millisUntilFinished/1000);
 
         }
 

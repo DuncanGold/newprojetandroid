@@ -39,7 +39,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Easy"
+                    android:text="Question"
                     android:textColor="#ffffff"
                     android:textSize="25.0sp"
                     android:textStyle="bold" />

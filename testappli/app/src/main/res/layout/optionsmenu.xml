@@ -14,9 +14,9 @@
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:inputType="textMultiLine"
-        android:text="Choose your Game difficulty"
+        android:text="Accueil"
         android:textColor="#ffffff"
-        android:textSize="25.0sp"
+        android:textSize="50.0sp"
         android:textStyle="bold" />
 
     <Button
@@ -29,10 +29,10 @@
         android:layout_marginRight="80dp"
         android:background="#fff"
         android:gravity="center"
-        android:text="@string/simple"
+        android:onClick="startQuiz"
+        android:text="Solo"
         android:textColor="#000000"
-        android:textSize="25.0sp"
-        android:onClick="startQuiz"/>
+        android:textSize="25.0sp" />
 
     <Button
         android:id="@+id/btnintermediate"
@@ -44,10 +44,10 @@
         android:layout_marginRight="80dp"
         android:background="#fff"
         android:gravity="center"
-        android:text="Intermediate"
+        android:onClick="startQuiz"
+        android:text="MULTI LOCAL"
         android:textColor="#000000"
-        android:textSize="25.0sp"
-        android:onClick="startQuiz"/>
+        android:textSize="25.0sp" />
 
     <Button
         android:id="@+id/btnhard"
@@ -59,9 +59,9 @@
         android:layout_marginRight="80dp"
         android:background="#fff"
         android:gravity="center"
-        android:text="Hard"
+        android:onClick="startQuiz"
+        android:text="MINI JEUX"
         android:textColor="#000000"
-        android:textSize="25.0sp"
-    android:onClick="startQuiz"/>
+        android:textSize="25.0sp" />
 
 </LinearLayout>
