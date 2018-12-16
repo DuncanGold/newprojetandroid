@@ -30,7 +30,11 @@ public class ShakeActivity extends AppCompatActivity {
     //private Chronometer mChronometer;
 
     long tStart;
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+        finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ActionBar actionBar = getSupportActionBar();

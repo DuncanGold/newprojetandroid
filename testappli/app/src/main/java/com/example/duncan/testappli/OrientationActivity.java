@@ -1,4 +1,5 @@
 package com.example.duncan.testappli;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,7 +17,11 @@ public class OrientationActivity extends Activity implements SensorEventListener
     private ImageView shakerimg;
     private static final int SENSOR_DELAY = 5 * 1000; // 500ms
     private static final int FROM_RADS_TO_DEGS = -57;
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), StartActivity.class));
+        finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

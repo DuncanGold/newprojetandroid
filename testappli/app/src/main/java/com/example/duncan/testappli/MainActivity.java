@@ -173,6 +173,9 @@
                       });*/showNextQuiz();
                   }
           }
-
+          @Override
+          public void onBackPressed() {
+                startActivity(new Intent(getApplicationContext(), StartActivity.class));
+                finish(); }
 
     }

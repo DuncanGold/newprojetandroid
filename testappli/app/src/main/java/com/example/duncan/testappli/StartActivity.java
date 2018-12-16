@@ -19,7 +19,9 @@ public class StartActivity extends Activity {
         editor.putInt("totalScore", 0);
         editor.commit();
     }
-
+    @Override
+    public void onBackPressed() {
+    }
     public void startQuiz(View view) {
 
         int quizCategory=1;
