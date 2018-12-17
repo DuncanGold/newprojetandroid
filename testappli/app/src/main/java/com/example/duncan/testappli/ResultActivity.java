@@ -62,6 +62,10 @@ public class ResultActivity extends Activity {
                     }
                     butnxt.setText("Accueil");
                     break;
+                case 5 :
+                    score = getIntent().getIntExtra("scoreFood",0);
+                    textresult.setText("Votre score : " + (int)score);
+                    break;
             }
         }
 

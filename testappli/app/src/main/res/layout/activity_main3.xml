@@ -17,7 +17,19 @@
         android:paddingVertical="14dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:background="@android:color/white"/>
+        android:background="@android:color/white"
+        />
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temps restant : 10"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingVertical="14dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+/>
 
     <FrameLayout
         android:id="@+id/gameFrame"
