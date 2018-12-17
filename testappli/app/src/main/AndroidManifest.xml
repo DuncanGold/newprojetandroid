@@ -1,77 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.duncan.testappli">
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.INTERNET"/>
-    <application
 
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="true" />
+
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/launchericonperso"
         android:label="@string/FunnyGames"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StartActivity"
+            android:label="StartActivity">>
+        </activity>
+        <activity
+            android:name=".WifiDirect"
+            android:label="Wifi"></activity>
+        <activity
+            android:name=".ResultActivity"
+            android:label="Result"></activity>
+        <activity
+            android:name=".PressActivity"
+            android:label="Press"></activity>
+        <activity
+            android:name=".SlideActivity"
+            android:label="Slide"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity"></activity>
+        <activity
+            android:name=".ShakeActivity"
+            android:label="ShakeActivity"></activity>
+        <activity
+            android:name=".OrientationActivity"
+            android:label="Orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".FoodActivity2"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".FoodActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".StartActivity">
+
+        <activity
+            android:name=".launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity
-            android:name=".WifiDirect"
-            android:label="Wifi" >
-
-        </activity>
-        <activity
-            android:name=".ResultActivity"
-            android:label="Result" >
-        </activity>
-        <activity
-            android:name=".PressActivity"
-            android:label="Press" >
-        </activity>
-        <activity
-            android:name=".SlideActivity"
-            android:label="Slide" >
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="MainActivity" >
-        </activity>
-        <activity
-            android:name=".ShakeActivity"
-            android:label="ShakeActivity" >
-        </activity>
-        <activity
-            android:name=".OrientationActivity"
-            android:label="Orientation"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name=".FoodActivity2"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-
-
-        </activity>
-        <activity android:name=".FoodActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-
-        </activity>
+            </intent-filter></activity>
     </application>
 
 </manifest>

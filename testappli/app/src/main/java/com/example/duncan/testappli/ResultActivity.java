@@ -1,12 +1,9 @@
 package com.example.duncan.testappli;
 
-        import android.animation.AnimatorSet;
         import android.app.Activity;
         import android.content.Context;
         import android.content.Intent;
         import android.content.SharedPreferences;
-        import android.media.MediaPlayer;
-        import android.media.SoundPool;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.transition.Slide;
@@ -16,8 +13,6 @@ package com.example.duncan.testappli;
         import android.widget.TextView;
 
 public class ResultActivity extends Activity {
-
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(getApplicationContext(), StartActivity.class));
@@ -28,7 +23,6 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         double score=0;
-
         TextView textresult = (TextView) findViewById(R.id.textResult);
         TextView scoreTotal = (TextView) findViewById(R.id.scoretotal);
         Button butnxt= (Button)findViewById(R.id.btnNEXT);
@@ -59,8 +53,6 @@ public class ResultActivity extends Activity {
                     textresult.setText("Votre score : " + (int)score);
                     break;
                 case 3 : score = getIntent().getIntExtra("scoreslide",0);
-                    final MediaPlayer endMusic = MediaPlayer.create(this, R.raw.jingleb);
-                    endMusic.start();
                     if(getIntent().getIntExtra("nextGame", 0)==1){
                         score=(int) (score-1)/10+1;
                         textresult.setText("Votre score : " + (int)score);
@@ -68,9 +60,7 @@ public class ResultActivity extends Activity {
                     else{
                         textresult.setText("Votre score : " + (int)score);
                     }
-
                     butnxt.setText("Accueil");
-
                     break;
                 case 5 :
                     score = getIntent().getIntExtra("scoreFood",0);

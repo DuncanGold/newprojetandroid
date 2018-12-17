@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minijeu3"
+    android:background="#0080ff"
+    android:id="@+id/minijeumenu"
     tools:context=".MainActivity">
 
 
@@ -29,8 +30,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-
-                android:textColor="#000"
+                android:inputType="textMultiLine"
+                android:text="Accueil"
+                android:textColor="#ffffff"
                 android:textSize="50.0sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
