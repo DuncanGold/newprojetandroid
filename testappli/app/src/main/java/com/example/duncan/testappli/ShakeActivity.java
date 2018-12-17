@@ -27,6 +27,7 @@ public class ShakeActivity extends AppCompatActivity {
     private ShakeDetector mShakeDetector;
     private ImageView img;
     private TextView tvShake;
+    private SoundPlayer soundPlayer;
     //private Chronometer mChronometer;
 
     long tStart;
@@ -37,6 +38,7 @@ public class ShakeActivity extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        soundPlayer = new SoundPlayer(this);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         tStart = System.currentTimeMillis();
@@ -65,6 +67,7 @@ public class ShakeActivity extends AppCompatActivity {
                  */
               //  mChronometer.start();
                 toast.show();
+                soundPlayer.playShakerSound();
                 int haut = 0;
                 if (img.getY()>500) haut = -250;
                 else {haut=250;}

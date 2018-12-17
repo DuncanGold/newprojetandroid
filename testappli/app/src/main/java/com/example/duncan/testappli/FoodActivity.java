@@ -105,6 +105,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         settings = getSharedPreferences("GAME_DATA", Context.MODE_PRIVATE);
         highScore = settings.getInt("HIGH_SCORE", 0);
         highScoreLabel.setText("Meilleure score : " + highScore);
+        box.setImageDrawable(imageBoxRight);
     }
 
     public void changePos() {
@@ -194,7 +195,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         if (action_flg) {
             // Touching
             boxX += 14;
-            box.setImageDrawable(imageBoxRight);
+           // box.setImageDrawable(imageBoxRight);
         } else {
             // Releasing
             boxX -= 14;
@@ -204,7 +205,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         // Check box position.
         if (boxX < 0) {
             boxX = 0;
-            box.setImageDrawable(imageBoxRight);
+           // box.setImageDrawable(imageBoxRight);
         }
         if (frameWidth - boxSize < boxX) {
             boxX = frameWidth - boxSize;

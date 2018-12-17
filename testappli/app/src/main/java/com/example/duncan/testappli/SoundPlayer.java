@@ -14,6 +14,7 @@ public class SoundPlayer {
     private static int hitOrangeSound;
     private static int hitPinkSound;
     private static int hitBlackSound;
+    private static int hitShakerSound;
 
     public SoundPlayer(Context context) {
 
@@ -37,6 +38,7 @@ public class SoundPlayer {
         hitOrangeSound = soundPool.load(context, R.raw.orange, 1);
         hitPinkSound = soundPool.load(context, R.raw.pink, 1);
         hitBlackSound = soundPool.load(context, R.raw.black, 1);
+        hitShakerSound = soundPool.load(context, R.raw.shakersound, 1);
     }
 
     public void playHitOrangeSound() {
@@ -49,5 +51,9 @@ public class SoundPlayer {
 
     public void playHitBlackSound() {
         soundPool.play(hitBlackSound, 1.0f, 1.0f, 1, 0, 1.0f);
+    }
+
+    public void playShakerSound() {
+        soundPool.play(hitShakerSound, 1.0f, 1.0f, 1, 0, 1.0f);
     }
 }
