@@ -44,7 +44,7 @@
         android:layout_marginRight="80dp"
         android:background="#fff"
         android:gravity="center"
-
+        android:onClick="startQuiz"
         android:text="MULTIJOUEUR"
         android:textColor="#000000"
         android:textSize="25.0sp" />
