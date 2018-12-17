@@ -45,7 +45,7 @@
         android:background="#fff"
         android:gravity="center"
 
-        android:text="MULTI LOCAL"
+        android:text="MULTIJOUEUR"
         android:textColor="#000000"
         android:textSize="25.0sp" />
 

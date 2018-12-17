@@ -75,7 +75,7 @@ public class ShakeActivity extends AppCompatActivity {
             }
 
             public void handleShakeEvent(int count){
-                if (count >= 10){
+                if (count >= 20){
 
                     //int elapsedMillis = (int) (SystemClock.elapsedRealtime() - mChronometer.getBase());
 

@@ -98,7 +98,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         scoreLabel = findViewById(R.id.scoreLabel);
         highScoreLabel = findViewById(R.id.highScoreLabel);
 
-        imageBoxLeft = getResources().getDrawable(R.drawable.box_left);
+        //imageBoxLeft = getResources().getDrawable(R.drawable.box_left);
         imageBoxRight = getResources().getDrawable(R.drawable.box_right);
 
         // High Score
@@ -161,7 +161,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         }
 
         // Black
-        blackY += 18;
+
 
         float blackCenterX = blackX + black.getWidth() / 2;
         float blackCenterY = blackY + black.getHeight() / 2;
@@ -183,6 +183,9 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
             blackY = -100;
             blackX = (float) Math.floor(Math.random() * (frameWidth - black.getWidth()));
         }
+       if (score > 19){blackY += 42;}
+       else if (score > 9 && score< 20){blackY += 30;}
+       else {blackY += 18;}
 
         black.setX(blackX);
         black.setY(blackY);
@@ -190,12 +193,12 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         // Move Box
         if (action_flg) {
             // Touching
-            boxX += 8;
+            boxX += 14;
             box.setImageDrawable(imageBoxRight);
         } else {
             // Releasing
-            boxX -= 8;
-            box.setImageDrawable(imageBoxLeft);
+            boxX -= 14;
+           // box.setImageDrawable(imageBoxLeft);
         }
 
         // Check box position.
@@ -205,7 +208,7 @@ public class FoodActivity extends AppCompatActivity implements SensorEventListen
         }
         if (frameWidth - boxSize < boxX) {
             boxX = frameWidth - boxSize;
-            box.setImageDrawable(imageBoxLeft);
+         //   box.setImageDrawable(imageBoxLeft);
         }
 
         box.setX(boxX);
