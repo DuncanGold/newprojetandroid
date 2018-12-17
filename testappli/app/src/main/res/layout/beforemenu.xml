@@ -3,7 +3,7 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0080ff"
+    android:background="@drawable/accueil"
     android:orientation="vertical"
     android:id="@+id/beforemenu">
 
@@ -19,7 +19,7 @@
         android:inputType="textMultiLine"
         android:text="Cliquez pour commencer !"
         android:textColor="#ffffff"
-        android:textSize="50.0sp"
+        android:textSize="40.0sp"
         android:textStyle="bold"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
