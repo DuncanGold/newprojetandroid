@@ -5,9 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class StartActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +27,9 @@ public class StartActivity extends Activity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("totalScore", 0);
         editor.commit();
+
     }
+
 
     @Override
     public void onBackPressed() {
