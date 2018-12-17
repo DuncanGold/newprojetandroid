@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.BreakIterator;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -391,14 +392,17 @@ public class FoodActivity2 extends AppCompatActivity implements SensorEventListe
 
 
             int scorefinal = score;
+            Random alea = new Random();
             Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
             appel.putExtra("scoreFood", scorefinal);
             appel.putExtra("typescore", 5);
             appel.putExtra("minigame", 0);
+            appel.putExtra("nextGame", alea.nextInt(2));
             startActivity(appel);
             finish();
 
         }
+
 
         @Override
         public void onTick(long millisUntilFinished) {

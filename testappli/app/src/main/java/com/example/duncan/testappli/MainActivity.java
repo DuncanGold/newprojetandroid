@@ -161,12 +161,15 @@
               }
               else {
                   //afficher le résultat
+                  Random alea = new Random();
                   Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
                   appel.putExtra("rightanswercount", rightAnswerCount);
                   appel.putExtra("typescore", 1);
                   appel.putExtra("minigame", 0);
+                  appel.putExtra("nextGame", alea.nextInt(2));
                   startActivity(appel);
               }
+
           }
               else
                   {

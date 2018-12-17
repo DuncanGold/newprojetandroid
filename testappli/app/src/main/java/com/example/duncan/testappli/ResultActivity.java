@@ -91,7 +91,15 @@ public void NextGame(View view){
     else{
         switch (getIntent().getIntExtra("typescore", 1)) {
             case 1:
-                Intent appel = new Intent(getApplicationContext(), ShakeActivity.class);
+                Intent appel;
+                if(getIntent().getIntExtra("nextGame", 0)==0){
+                    appel = appel = new Intent(getApplicationContext(), FoodActivity2.class);
+                    appel.putExtra("nextGame", 0);
+                }
+                else{
+                    appel = appel = new Intent(getApplicationContext(), ShakeActivity.class);
+                    appel.putExtra("nextGame", 1);
+                }
                 startActivity(appel);
                 break;
             case 2:
@@ -109,6 +117,18 @@ public void NextGame(View view){
             case 3:
                 Intent appel2 = new Intent(getApplicationContext(), StartActivity.class);
                 startActivity(appel2);
+                break;
+            case 5 :
+                Intent appel5;
+                if(getIntent().getIntExtra("nextGame", 0)==0){
+                    appel5 = new Intent(getApplicationContext(), SlideActivity.class);
+                    appel5.putExtra("nextGame", 0);
+                }
+                else{
+                    appel5 = new Intent(getApplicationContext(), PressActivity.class);
+                    appel5.putExtra("nextGame", 1);
+                }
+                startActivity(appel5);
                 break;
         }
     }
