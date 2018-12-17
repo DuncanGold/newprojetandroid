@@ -83,10 +83,22 @@ public class ShakeActivity extends AppCompatActivity {
                     long tDelta = tEnd - tStart;
                     double elapsedMillis = tDelta / 1000.0;
                     toast.cancel();
-                    Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
-                    appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
-                    appel.putExtra("typescore", 2);
-                    startActivity(appel);
+
+                    if (getIntent().getIntExtra("minigame", 0) == 1) {
+                        Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                        appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
+                        appel.putExtra("typescore", 2);
+                        appel.putExtra("minigame", 1);
+                        startActivity(appel);
+                    }
+                    else{
+                        Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                        appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
+                        appel.putExtra("typescore", 2);
+                        appel.putExtra("minigame", 0);
+                        startActivity(appel);
+                    }
+
                 }
             }
         });

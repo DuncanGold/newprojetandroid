@@ -150,13 +150,24 @@
               alertTitle = "Mauvaise réponse !";
 
           }
-          if (quizCount == QUIZnb){
-              //afficher le résultat
-              Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
-              appel.putExtra("rightanswercount", rightAnswerCount);
-              appel.putExtra("typescore", 1);
-              startActivity(appel);
+          if (quizCount == QUIZnb) {
+
+              if (getIntent().getIntExtra("minigame", 0) == 1) {
+                  Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                  appel.putExtra("rightanswercount", rightAnswerCount);
+                  appel.putExtra("typescore", 1);
+                  appel.putExtra("minigame", 1);
+                  startActivity(appel);
               }
+              else {
+                  //afficher le résultat
+                  Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                  appel.putExtra("rightanswercount", rightAnswerCount);
+                  appel.putExtra("typescore", 1);
+                  appel.putExtra("minigame", 0);
+                  startActivity(appel);
+              }
+          }
               else
                   {
                       quizCount++;

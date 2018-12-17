@@ -231,7 +231,7 @@ public class SlideActivity extends AppCompatActivity {
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         i=0;
         myText = findViewById(R.id.myText);
-        myText.setText("Score actuel  : "+i);
+        myText.setText("Score : "+i);
         visibleImageAlea();
         textView = findViewById(R.id.textView);
         tv = findViewById(R.id.tv);
@@ -326,10 +326,22 @@ public class SlideActivity extends AppCompatActivity {
           //  myText=findViewById(R.id.score);
             //myText.setText(""+i);
             int scorefinal = i;
-            Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
-            appel.putExtra("scoreslide", scorefinal);
-            appel.putExtra("typescore", 3);
-            startActivity(appel);
+
+            if (getIntent().getIntExtra("minigame", 0) == 1) {
+                Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                appel.putExtra("scoreslide", scorefinal);
+                appel.putExtra("typescore", 3);
+                appel.putExtra("minigame", 1);
+                startActivity(appel);
+            }
+            else{
+                Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                appel.putExtra("scoreslide", scorefinal);
+                appel.putExtra("typescore", 3);
+                appel.putExtra("minigame", 0);
+                startActivity(appel);
+            }
+
         }
 
         @Override
