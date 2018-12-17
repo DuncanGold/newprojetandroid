@@ -40,6 +40,10 @@
             android:label="Result" >
         </activity>
         <activity
+            android:name=".PressActivity"
+            android:label="Press" >
+        </activity>
+        <activity
             android:name=".SlideActivity"
             android:label="Slide" >
         </activity>

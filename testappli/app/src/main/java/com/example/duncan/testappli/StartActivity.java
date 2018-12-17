@@ -82,6 +82,12 @@ public class StartActivity extends Activity {
                 startActivity(appel3);
                 break;
 
+            case R.id.btnsimple10:
+
+                Intent appel4 = new Intent(getApplicationContext(), PressActivity.class);
+                appel4.putExtra("minigame", 1);
+                startActivity(appel4);
+                break;
 
         }
 
