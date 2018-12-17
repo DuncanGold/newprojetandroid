@@ -26,17 +26,35 @@ public class ResultActivity extends Activity {
         TextView scoreTotal = (TextView) findViewById(R.id.scoretotal);
         Button butnxt= (Button)findViewById(R.id.btnNEXT);
 
-        switch (getIntent().getIntExtra("typescore",1)) {
-            case 1 : score = getIntent().getIntExtra("rightanswercount",0);
-                textresult.setText("Votre score : "+(int)score + " / 5");
-                break;
-            case 2 : score = getIntent().getDoubleExtra("resultatshake",0);
-            textresult.setText("Votre score : " + (int)score);
-            break;
-            case 3 : score = getIntent().getIntExtra("scoreslide",0);
-                textresult.setText("Votre score : " + (int)score);
-                butnxt.setText("Play Again");
-                break;
+        if(getIntent().getIntExtra("minigame", 0)==1){
+            switch (getIntent().getIntExtra("typescore",1)) {
+                case 1 : score = getIntent().getIntExtra("rightanswercount",0);
+                    textresult.setText("Votre score : "+(int)score + " / 5");
+                    butnxt.setText("Accueil");
+                    break;
+                case 2 : score = getIntent().getDoubleExtra("resultatshake",0);
+                    textresult.setText("Votre score : " + (int)score);
+                    butnxt.setText("Accueil");
+                    break;
+                case 3 : score = getIntent().getIntExtra("scoreslide",0);
+                    textresult.setText("Votre score : " + (int)score);
+                    butnxt.setText("Accueil");
+                    break;
+            }
+        }
+        else{
+            switch (getIntent().getIntExtra("typescore",1)) {
+                case 1 : score = getIntent().getIntExtra("rightanswercount",0);
+                    textresult.setText("Votre score : "+(int)score + " / 5");
+                    break;
+                case 2 : score = getIntent().getDoubleExtra("resultatshake",0);
+                    textresult.setText("Votre score : " + (int)score);
+                    break;
+                case 3 : score = getIntent().getIntExtra("scoreslide",0);
+                    textresult.setText("Votre score : " + (int)score);
+                    butnxt.setText("Accueil");
+                    break;
+            }
         }
 
 
@@ -52,20 +70,27 @@ public class ResultActivity extends Activity {
             editor.commit();
     }
 public void NextGame(View view){
+    if(getIntent().getIntExtra("minigame", 0)==1) {
 
-    switch (getIntent().getIntExtra("typescore",1)) {
-        case 1 :
-        Intent appel = new Intent(getApplicationContext(), ShakeActivity.class);
-        startActivity(appel);
-        break;
-        case 2 :
-            Intent appel1 = new Intent(getApplicationContext(), SlideActivity.class);
-            startActivity(appel1);
-            break;
-        case 3 :
-            Intent appel2 = new Intent(getApplicationContext(), StartActivity.class);
-            startActivity(appel2);
-            break;
+                Intent appel2 = new Intent(getApplicationContext(), StartActivity.class);
+                startActivity(appel2);
+
+    }
+    else{
+        switch (getIntent().getIntExtra("typescore", 1)) {
+            case 1:
+                Intent appel = new Intent(getApplicationContext(), ShakeActivity.class);
+                startActivity(appel);
+                break;
+            case 2:
+                Intent appel1 = new Intent(getApplicationContext(), SlideActivity.class);
+                startActivity(appel1);
+                break;
+            case 3:
+                Intent appel2 = new Intent(getApplicationContext(), StartActivity.class);
+                startActivity(appel2);
+                break;
+        }
     }
 }
 }
