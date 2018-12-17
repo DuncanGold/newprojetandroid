@@ -92,11 +92,13 @@ public class ShakeActivity extends AppCompatActivity {
                         startActivity(appel);
                     }
                     else{
-                        Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
-                        appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
-                        appel.putExtra("typescore", 2);
-                        appel.putExtra("minigame", 0);
-                        startActivity(appel);
+                        Random alea = new Random();
+                            Intent appel = new Intent(getApplicationContext(), ResultActivity.class);
+                            appel.putExtra("resultatshake", (double) (10 - elapsedMillis));
+                            appel.putExtra("typescore", 2);
+                            appel.putExtra("minigame", 0);
+                            appel.putExtra("nextGame", alea.nextInt(2));
+                            startActivity(appel);
                     }
 
                 }
