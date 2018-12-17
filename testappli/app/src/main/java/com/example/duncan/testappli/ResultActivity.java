@@ -4,6 +4,7 @@ package com.example.duncan.testappli;
         import android.content.Context;
         import android.content.Intent;
         import android.content.SharedPreferences;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.transition.Slide;
@@ -53,6 +54,8 @@ public class ResultActivity extends Activity {
                     textresult.setText("Votre score : " + (int)score);
                     break;
                 case 3 : score = getIntent().getIntExtra("scoreslide",0);
+                    final MediaPlayer endMusic = MediaPlayer.create(this, R.raw.jingleb);
+                    endMusic.start();
                     if(getIntent().getIntExtra("nextGame", 0)==1){
                         score=(int) (score-1)/10+1;
                         textresult.setText("Votre score : " + (int)score);
